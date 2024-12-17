@@ -1,7 +1,7 @@
 /* ===========================
     Réinitialisation générale
    =========================== */
-   * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,6 +18,7 @@
     --text-color: #333;
     --white: #fff;
 
+    --gap-xxl: 150px;
     --gap-large: 20px;
     --gap-small: 10px;
 }
@@ -37,14 +38,15 @@ header {
 .logo {
     width: 150px;
     height: auto;
-    margin: 0 auto var(--gap-large) auto;
+    margin: auto;
+    margin-top: 20px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 150px;
+    gap: var(--gap-xxl);
 }
 
 nav a {
@@ -81,7 +83,7 @@ nav a:hover {
 .presentation p {
     font-size: 18px;
     text-align: justify;
-    margin-bottom: var(--gap-small);
+    margin-bottom: var(--gap-large);
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -90,40 +92,52 @@ nav a:hover {
         Section Membres
    =========================== */
 .membres {
+    background-color: var(--secondary-color);
     padding: var(--gap-large);
     text-align: center;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
-.membres h1 {
+.membres h2 {
     font-size: 30px;
+    font-weight: bold;
+    color: var(--white);
     margin-bottom: var(--gap-large);
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .membres-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: var(--gap-large);
+    gap: 40px;
 }
 
 .membre {
-    border: 2px solid var(--text-color);
-    border-radius: 10px;
-    padding: var(--gap-large) var(--gap-small);
+    border-radius: 15px;
+    padding: var(--gap-large);
     width: 250px;
-    height: 300px;
+    height: 350px;
     text-align: center;
+    background-color: var(--primary-color);
 }
 
 .membre .photo {
     width: 150px;
     height: 150px;
-    margin: 0 auto var(--gap-small);
+    margin: 0 auto var(--gap-large);
 }
 
 .membre p {
     font-size: 18px;
-    text-align: center;
+    color: var(--white);
+    font-weight: bold;
+    text-align: left;
+    padding-top: 10px;
 }
 
 img {
@@ -136,82 +150,122 @@ img {
         Section Contact
    =========================== */
 .contact {
-    background-color: var(--background-light);
+    background-color: var(--secondary-color);
     padding: var(--gap-large);
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.contact h1 {
+.contact h2 {
     font-size: 30px;
+    font-weight: bold;
+    color: var(--white);
     margin-bottom: var(--gap-large);
     text-align: center;
+    text-transform: uppercase;
 }
 
 form {
     display: flex;
-    flex-direction: column;
-    gap: var(--gap-small);
-    max-width: 500px;
-    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-around;
+
 }
 
-input,
-textarea {
+input {
     padding: var(--gap-small);
-    border: 1px solid #ccc;
     border-radius: 5px;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    margin-bottom: 20px;
+    width: 50%;
+    height: 150px;
+    padding: var(--gap-small);
+    border-radius: 10px;
 }
 
 button {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--background-light);
+    color: var(--black);
     border: none;
     padding: var(--gap-small);
     cursor: pointer;
     font-weight: bold;
+    font-size: 20px;
+    width: 150px;
+    border-radius: 10px;
+    margin: auto;
 }
 
 button:hover {
-    background-color: #00796b; /* Légère variation de couleur */
+    background-color: #585858;
+    /* Légère variation de couleur */
+    color: white;
 }
 
 /* ===========================
     Pied de page
    =========================== */
 footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: var(--gap-large);
     display: flex;
-    justify-content: space-between; /* Écarte les éléments aux extrémités */
+    /* Utilise Flexbox */
+    justify-content: space-between;
+    /* Sépare les éléments */
     align-items: center;
-    flex-wrap: wrap;
+    /* Centre verticalement */
+    background-color: #808080;
+    /* Gris pour ton footer */
+    padding: 20px 0 20px 0;
 }
 
-footer ul {
-    list-style: disc; /* Active les puces */
-    margin-left: 20px; /* Décalage pour les puces */
+.footer-center {
+    flex: 1;
+    text-align: center;
 }
 
-.menu-footer1 {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-small);
-    align-items: flex-start; /* Alignement à gauche */
+.footer-left {
+    text-align: left;
+    /* Aligne les "Lorem" à gauche */
+    list-style: none;
+    padding-left: 20px;
 }
 
-.menu-footer2 {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-small);
-    align-items: center; /* Alignement au centre */
+.footer-left ul {
+    list-style: none; /* Enlève les puces */
+    }
+
+.footer-right {
+    text-align: right;
+    /* Aligne le logo à droite */
+    padding-right: 20px;
 }
 
-footer .logo {
-    width: 150px;
-    height: auto;
-    margin-left: auto; /* Force le logo à se positionner à droite */
+.footer-center ul {
+    list-style: none; /* Enlève les puces */
 }
 
+.footer-center a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-right img {
+    max-width: 100px;
+    /* Ajuste la taille du logo */
+}
+
+footer li {
+    font-size: 20px;
+    color: var(--white);
+    
+}
 /* ===========================
     Media Queries (Responsive)
    =========================== */
@@ -230,7 +284,9 @@ footer .logo {
         height: auto;
     }
 
-    .presentation, .membres, .contact {
+    .presentation,
+    .membres,
+    .contact {
         height: auto;
         padding: var(--gap-small);
     }
